@@ -1,0 +1,7 @@
+Employee_ID,Full_Name,Department,Email_Address,Salary,Start_Date,Notes
+E12345,John Smith,Engineering,john.smith@example.com,75000,2024-01-15,Full-time
+E67890,Sarah Johnson,Marketing,sarah.j@example.com,68000,2024-02-20,Remote
+E34567,Mike Chen,Sales,m.chen@example.com,82000,2024-03-10,Full-time
+E89012,Emily Davis,HR,emily.davis@example.com,65000,2024-04-05,Part-time
+E45678,David Wilson,Finance,d.wilson@example.com,91000,2024-05-12,Full-time
+
