@@ -1,4 +1,3 @@
-import React from 'react';
 import { Building2, Users, Package, TrendingUp, Receipt, Database } from 'lucide-react';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -60,10 +59,10 @@ export function UseCases() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-brand font-semibold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-brand font-medium text-slate-900 mb-4">
             More Than Just Banking
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
             Any team that moves data between systems can benefit from intelligent data transformation
           </p>
         </div>

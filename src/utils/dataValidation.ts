@@ -3,7 +3,7 @@
  * Validates data against template requirements
  */
 
-import { BankTemplate, FieldMapping } from '../types';
+import { BankTemplate, FieldMapping } from '../App';
 
 export interface ValidationError {
   row: number;
@@ -38,7 +38,7 @@ export const validateData = (
 
   sourceData.forEach((row, rowIndex) => {
     // Validate required fields
-    template.requiredFields.forEach((targetField) => {
+    template.requiredFields.forEach((targetField: string) => {
       const sourceField = mapping[targetField];
 
       if (!sourceField) {
@@ -75,7 +75,7 @@ export const validateData = (
     });
 
     // Validate optional fields (warnings only)
-    template.optionalFields.forEach((targetField) => {
+    template.optionalFields.forEach((targetField: string) => {
       const sourceField = mapping[targetField];
 
       if (sourceField) {

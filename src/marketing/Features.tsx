@@ -1,4 +1,3 @@
-import React from 'react';
 import { Upload, FileText, Wand2, CheckCircle, Clock, Shield } from 'lucide-react';
 import { Card } from '../components/ui/card';
 
@@ -53,10 +52,10 @@ export function Features() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-brand font-semibold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-brand font-medium text-slate-900 mb-4">
             Everything You Need to Transform Data Faster
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
             Built for data teams who are tired of manual data entry and formatting headaches
           </p>
         </div>

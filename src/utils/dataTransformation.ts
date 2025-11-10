@@ -3,7 +3,7 @@
  * Transforms source data using field mappings to match output template requirements
  */
 
-import { BankTemplate, FieldMapping } from '../types';
+import { BankTemplate, FieldMapping } from '../App';
 
 export interface TransformationResult {
   data: Record<string, any>[];

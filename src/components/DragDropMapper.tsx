@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from 'react';
-import { ChevronRight, CheckCircle2, AlertCircle, Sparkles, RotateCcw } from 'lucide-react';
+import { useCallback, useState } from 'react';
+import { ChevronRight, CheckCircle2, Sparkles, RotateCcw } from 'lucide-react';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';

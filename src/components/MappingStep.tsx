@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { ArrowRight, Save, Lightbulb, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
+import { Save, Lightbulb, CheckCircle2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';

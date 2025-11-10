@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { History, ChevronDown, ChevronUp, User, Upload, Edit, Check, X } from 'lucide-react';
+import { useState } from 'react';
+import { History, ChevronDown, ChevronUp, User, Upload, Edit, Check } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -139,7 +139,7 @@ export function AuditLog({ entries = mockEntries }: AuditLogProps) {
         
         <CollapsibleContent>
           <div className="mt-4 space-y-3 max-h-60 overflow-y-auto">
-            {entries.map((entry, index) => (
+            {entries.map((entry) => (
               <div key={entry.id} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                 <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
                   entry.status === 'success' ? 'bg-emerald-100 text-emerald-600' :

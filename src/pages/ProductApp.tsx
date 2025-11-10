@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import { Button } from '../components/ui/button';
 import { Dashboard } from '../components/Dashboard';
 import { UploadStep } from '../components/UploadStep';
 import { TemplateStep } from '../components/TemplateStep';
@@ -12,6 +11,8 @@ import { StepNavigation } from '../components/StepNavigation';
 import { UploadedFile, BankTemplate, FieldMapping } from '../App';
 
 export function ProductApp() {
+  const steps = ['Upload Data', 'Select Template', 'Map Fields', 'Validate & Export'];
+  
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [uploadedFile, setUploadedFile] = useState<UploadedFile | null>(null);
   const [selectedTemplate, setSelectedTemplate] = useState<BankTemplate | null>(null);
@@ -21,7 +22,7 @@ export function ProductApp() {
   const [validationErrors, setValidationErrors] = useState<any[]>([]);
 
   const handleNext = () => {
-    if (currentStep < 3) {
+    if (currentStep < 4) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -33,24 +34,11 @@ export function ProductApp() {
   };
 
   const handleStepClick = (step: number) => {
-    if (step <= currentStep) {
+    // step is 1-indexed from StepNavigation, but currentStep is 0-indexed with Dashboard at 0
+    // So step 1 = currentStep 1, step 2 = currentStep 2, etc.
+    if (step <= currentStep && step > 0) {
       setCurrentStep(step);
     }
-  };
-
-  const handleFileUpload = (file: UploadedFile) => {
-    setUploadedFile(file);
-    handleNext();
-  };
-
-  const handleTemplateSelect = (template: BankTemplate) => {
-    setSelectedTemplate(template);
-    handleNext();
-  };
-
-  const handleMappingComplete = (mapping: FieldMapping) => {
-    setFieldMapping(mapping);
-    handleNext();
   };
 
   const handleStartEdit = (rowIndex?: number, errors?: any[]) => {
@@ -100,7 +88,7 @@ export function ProductApp() {
 
       {/* Step Navigation */}
       {!isEditing && currentStep > 0 && (
-        <StepNavigation currentStep={currentStep} onStepClick={handleStepClick} />
+        <StepNavigation currentStep={currentStep} steps={steps} onStepClick={handleStepClick} />
       )}
 
       {/* Main Content */}
@@ -110,35 +98,42 @@ export function ProductApp() {
             uploadedFile={uploadedFile}
             selectedTemplate={selectedTemplate}
             fieldMapping={fieldMapping}
-            errors={validationErrors}
+            editContext={{
+              isEditing: true,
+              editingRow: editingRowIndex,
+              originalData: uploadedFile?.data || [],
+              validationErrors: validationErrors
+            }}
             onSave={handleEditComplete}
             onCancel={handleEditCancel}
-            editingRowIndex={editingRowIndex}
           />
         ) : (
           <>
             {currentStep === 0 && <Dashboard onStartImport={() => setCurrentStep(1)} />}
             {currentStep === 1 && (
               <UploadStep
-                onNext={handleFileUpload}
+                onNext={handleNext}
                 onBack={() => setCurrentStep(0)}
                 uploadedFile={uploadedFile}
+                setUploadedFile={setUploadedFile}
               />
             )}
             {currentStep === 2 && (
               <TemplateStep
-                onNext={handleTemplateSelect}
+                onNext={handleNext}
                 onBack={handleBack}
                 selectedTemplate={selectedTemplate}
+                setSelectedTemplate={setSelectedTemplate}
               />
             )}
             {currentStep === 3 && (
               <MappingStep
-                onNext={handleMappingComplete}
+                onNext={handleNext}
                 onBack={handleBack}
                 uploadedFile={uploadedFile}
                 selectedTemplate={selectedTemplate}
                 fieldMapping={fieldMapping}
+                setFieldMapping={setFieldMapping}
               />
             )}
             {currentStep === 4 && (

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 
@@ -33,7 +32,7 @@ export function Navigation() {
           {/* CTA Button */}
           <Link to="/app">
             <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-              Try Demo
+              Format data now
             </Button>
           </Link>
         </div>

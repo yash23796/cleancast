@@ -1,4 +1,3 @@
-import React from 'react';
 import { Upload, FileText, ArrowRightLeft, CheckCircle, ArrowRight, Shield, Clock, FileSpreadsheet, Database, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';

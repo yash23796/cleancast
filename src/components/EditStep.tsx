@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { Save, X, AlertTriangle, Check, ArrowLeft } from 'lucide-react';
+import { useState, useEffect, useMemo, useCallback, memo } from 'react';
+import { Save, AlertTriangle, Check, ArrowLeft } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
-import { Alert, AlertDescription } from './ui/alert';
-import { Switch } from './ui/switch';
 import { UploadedFile, BankTemplate, FieldMapping, EditContext } from '../App';
 import { StickyFooter } from './StickyFooter';
 import { ConfirmDialog } from './ConfirmDialog';
@@ -35,7 +33,7 @@ interface EditTableRowProps {
   handleCellEdit: (rowIndex: number, field: string, newValue: string) => void;
 }
 
-const EditTableRow = React.memo(({ 
+const EditTableRow = memo(({ 
   row, 
   rowIndex, 
   mappedFields, 
@@ -142,7 +140,7 @@ export function EditStep({
   const mappedFields = useMemo(() => {
     const mapped: string[] = [];
     if (fieldMapping) {
-      Object.entries(fieldMapping).forEach(([templateField, fileHeader]) => {
+      Object.entries(fieldMapping).forEach(([_, fileHeader]) => {
         if (fileHeader) {
           mapped.push(fileHeader);
         }

@@ -171,9 +171,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
+Email: [hemmadyyash@gmail.com](mailto:hemmadyyash@gmail.com)
+
 Project Link: [https://github.com/yash23796/cleancast](https://github.com/yash23796/cleancast)
-
----
-
-Made with ❤️ for better data workflows
 

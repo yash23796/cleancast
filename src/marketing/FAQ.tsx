@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -47,10 +46,10 @@ export function FAQ() {
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-brand font-semibold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-brand font-medium text-slate-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-base text-gray-600">
             Everything you need to know about CleanCast
           </p>
         </div>
@@ -61,7 +60,7 @@ export function FAQ() {
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="border border-gray-200 rounded-xl px-6 bg-white hover:shadow-md transition-shadow"
+              className="border border-gray-200 rounded-xl px-6 bg-white hover:shadow-md transition-shadow [&:last-child]:!border-b"
             >
               <AccordionTrigger className="text-left font-medium text-slate-900 hover:no-underline py-5">
                 {faq.question}

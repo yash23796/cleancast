@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Download, CheckCircle, AlertTriangle, Edit, RefreshCw, Copy, FileText, Check, ArrowLeft } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Download, CheckCircle, AlertTriangle, Edit, RefreshCw, Copy, FileText, Check } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
-import { Progress } from './ui/progress';
 import { Badge } from './ui/badge';
-import { Alert, AlertDescription } from './ui/alert';
 import { UploadedFile, BankTemplate, FieldMapping } from '../App';
 import { toast } from 'sonner';
 import { StickyFooter } from './StickyFooter';
@@ -23,12 +21,12 @@ interface ValidationStepProps {
 }
 
 export function ValidationStep({ 
-  onBack, 
+  onBack: _onBack, 
   uploadedFile, 
   selectedTemplate, 
   fieldMapping,
   onStartEdit,
-  onDataUpdate
+  onDataUpdate 
 }: ValidationStepProps) {
   const [isValidating, setIsValidating] = useState(false);
   const [isExporting, setIsExporting] = useState(false);

@@ -3,8 +3,8 @@
  * Shows only the fields that need editing with error highlighting
  */
 
-import React, { useState, useEffect } from 'react';
-import { X, Save, AlertCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Save, AlertCircle, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -29,7 +29,7 @@ export function EditRowModal({
   rowData,
   fieldMapping,
   template,
-  errors,
+  errors: _errors,
   onSave,
 }: EditRowModalProps) {
   const [editedData, setEditedData] = useState<Record<string, any>>({ ...rowData });

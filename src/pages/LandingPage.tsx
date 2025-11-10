@@ -1,4 +1,3 @@
-import React from 'react';
 import { Hero } from '../marketing/Hero';
 import { Features } from '../marketing/Features';
 import { UseCases } from '../marketing/UseCases';
